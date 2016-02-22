@@ -7,3 +7,35 @@
 
 
 var integers = [13, 25, 6, 3, 11, 2, 18, 7, 21, 1, 29, 20, 12, 8];
+
+var sortedNumbers = integers.sort(function(first, second) { return first - second; }).filter(
+   function(sortedNumber) {return sortedNumber < 19;}).map(function(newNum) { return newNum * 1.5 -1; }).reduce(
+  function(prev, curr) {
+     return prev + curr;
+  }
+);
+
+console.log("sortedNumbers", sortedNumbers);
+
+// var newNums = sortedNumbers.filter(
+//    function(sortedNumber) {return sortedNumber < 19;});
+
+
+// var thirdNums = newNums.map(
+//     function(newNum) {
+//        return newNum * 1.5 -1;
+//   }
+// );
+
+
+// var fourthNums = thirdNums.reduce(
+//   function(prev, curr) {
+//      return prev + curr;
+//   }
+// );
+
+
+// console.log("newNums", newNums);
+// console.log("thirdNums", thirdNums);
+// console.log("fourthNums", fourthNums);
+
