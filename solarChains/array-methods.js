@@ -1,3 +1,4 @@
+
 var planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"];
 
 /*
@@ -15,26 +16,36 @@ planets.forEach(function(planet) {
 
 
 // Use the map method to create a new array where the first letter of each planet is capitalized
+
 var planetsCaps = planets.map(
   function(planet) {
     return planet.charAt(0).toUpperCase() + planet.slice(1);
   });
 
-console.log(planetsCaps);
+  console.log(planetsCaps);
 
 
 
-// Use the filter method to create a new array that contains planets with the letter 'e'
+// Use the filter method to create a new array that contains only planets with the letter 'e'
 
-var noEPlanets planets.filter
+var eLessPlanets = planets.filter(
+  function(planet) {
+    return planet.indexOf("e") !== -1;
+  }
+  );
 
+console.log(eLessPlanets);
 
-var forLetters = colors.filter(
-   function(color){
-      return color.length === 4;
-    }
-          );
 
 // Use the reduce method to create a sentence from the words in the following array
 
 var words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"];
+
+
+var sentence = words.reduce(
+  function(prev, curr) {
+     return prev + " " + curr;
+  }
+);
+
+console.log(sentence);
