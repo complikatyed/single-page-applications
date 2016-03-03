@@ -1,0 +1,38 @@
+.blue {
+  color: blue;
+}
+
+.hulk {
+  font-size: 2em;
+}
+
+.captured {
+  border: 2px dashed purple;
+}
+
+.rounded {
+  border: 3px solid red;
+  border-radius: 15px;
+}
+
+/* Make the buttons stop appearing next to each other as inline elements.
+Change them into block elements. */
+
+button {
+  display: block;
+}
+
+
+/* The first section's text should be bold. */
+
+section:first-of-type {
+  font-weight: 800;
+}
+
+
+/* The last section's text should be bold and italicized. */
+
+section:last-of-type {
+  font-weight: 800;
+  font-style: italic;
+}
