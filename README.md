@@ -11,3 +11,5 @@
 2. [Chaining Array Methods](https://github.com/nashville-software-school/front-end-milestones/blob/master/single-page-applications/exercises/SP_JS_ARRAYS_CHAINING.md)  
 3. [Guinea Pig Event Handlers](https://github.com/nashville-software-school/front-end-milestones/blob/master/single-page-applications/exercises/SP_JS_EVENT_LISTENERS_GUINEA_PIG.md)  
 4. [Dynamic Cards](https://github.com/nashville-software-school/front-end-milestones/blob/master/single-page-applications/exercises/SP_JS_EVENT_LISTENERS_DYNAMIC_CARDS.md)
+5. [WYSIWYG Event Handlers](https://github.com/nashville-software-school/front-end-milestones/blob/master/single-page-applications/exercises/SP_JS_EVENT_LISTENERS_WYSIWYG.md)  
+6. [IIFE Sandwich Maker](https://github.com/nashville-software-school/front-end-milestones/blob/master/single-page-applications/exercises/SP_JS_IIFE_SANDWICH.md)  
