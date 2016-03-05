@@ -1,0 +1,19 @@
+.personCard {
+  display: inline-block;
+  background-color: yellow;
+  max-width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid orange;
+  text-align: center;
+}
+
+img {
+  max-height: 200px;
+  margin: 5px;
+}
+
+.header {
+  font-size: 1.1em;
+  font-weight: 900;
+}
