@@ -1,10 +1,17 @@
+
 .card {
+  display: inline-block;
   border: 2px dashed purple;
   height: 100px;
   width: 100px;
   background-color: skyblue;
+  margin: 10px;
+  font-size: 2em;
+  text-align: center;
 }
 
-.cardArea {
-  background-color: lavendar;
+/* Even numbered cards get a different background color */
+
+.card:nth-child(2n){
+  background-color: orange;
 }
