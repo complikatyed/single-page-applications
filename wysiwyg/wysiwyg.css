@@ -1,4 +1,5 @@
-.personCard {
+.personCard,
+.bordered {
   display: inline-block;
   background-color: yellow;
   max-width: 30%;
@@ -7,6 +8,16 @@
   border: 1px solid orange;
   text-align: center;
 }
+
+.personCard:nth-child(2n) {
+  background-color: skyblue;
+}
+
+.bordered {
+  border: 3px dotted purple;
+}
+
+
 
 img {
   max-height: 200px;
