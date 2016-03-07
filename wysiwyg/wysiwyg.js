@@ -59,5 +59,14 @@ var addPerson = function(myArray, myId) {
   };
 };
 
-
 addPerson(people, "peopleContainer");
+
+var onePerson = document.getElementById("peopleContainer");
+
+
+onePerson.addEventListener("click", function(){
+  event.target.closest('person').setAttribute("class", "bordered");
+});
+
+
+
