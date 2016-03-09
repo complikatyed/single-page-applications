@@ -37,6 +37,8 @@ people = [
 //   <footer>Lifespan info goes here</footer>
 // </person>
 
+var userInput = document.getElementById("userInput");
+var cardId;
 
 var makePersonString = function(myObj, myIterator) {
   var personString = "";
@@ -61,77 +63,43 @@ var addPerson = function(myArray, myId) {
   for (var i = 0; i < myArray.length; i++) {
     personString = makePersonString(myArray[i], i);
     personElement.innerHTML += personString;
+
+    var elementToAddListenerTo = document.getElementById("person--" + i);
+    console.log(elementToAddListenerTo);
+    elementToAddListenerTo.addEventListener("click", function(){
+      console.log("clicked");
+      //changeBorder();
+      //userInput.focus();
+    });
   };
 };
 
+
+var changeBorder = function() {
+  var card = event.target.closest('person');
+  card.setAttribute("class", "bordered");
+  cardId = card.getAttribute('id').split("--")[1];
+}
 
 
 
 addPerson(people, "peopleContainer");
 
-var userInput = document.getElementById("userInput");
-var zeroPerson = document.getElementById("person--0");
-var onePerson = document.getElementById("person--1");
-var twoPerson = document.getElementById("person--2");
-
-
-zeroPerson.addEventListener("click", function(){
-  console.log("click zero");
-  var card = event.target.closest('person');
-  card.setAttribute("class", "bordered");
-
-  var cardId = card.getAttribute('id').split("--")[1];
-  userInput.focus();
-
-  console.log("cardId", cardId);
-  userInput.addEventListener("keyup", function() {
-
-     changeText(cardId, "inputZero");
-  });
+userInput.addEventListener("keyup", function() {
+   changeText(cardId, userInput);
 });
-
-onePerson.addEventListener("click", function(){
-  console.log("click one");
-  var card = event.target.closest('person');
-  card.setAttribute("class", "bordered");
-
-  var cardId = card.getAttribute('id').split("--")[1];
-  userInput.focus();
-  console.log("cardId", cardId);
-  userInput.addEventListener("keyup", function() {
-     changeText(cardId, "inputOne");
-  });
-});
-
-twoPerson.addEventListener("click", function(){
-  console.log("click two");
-  var card = event.target.closest('person');
-  card.setAttribute("class", "bordered");
-
-  var cardId = card.getAttribute('id').split("--")[1];
-  userInput.focus();
-  console.log("cardId", cardId);
-  userInput.addEventListener("keyup", function() {
-     changeText(cardId, "inputTwo", userInput);
-  });
-});
-
 
 userInput.addEventListener("keypress", function(e) {
   if (e.keyCode === 13) {
     userInput.blur();
     userInput.value = "";
-    userInput.setAttribute("id", "userInput");
   }
 });
 
 
 var changeText = function(thingy, elId){
-  userInput.setAttribute("id", elId);
-  var newUserInput = document.getElementById(elId).value;
   var newBio = document.getElementById("bio--" + thingy);
-  console.log("newBioId", thingy);
-  newBio.childNodes[0].nodeValue = newUserInput;
+  newBio.childNodes[0].nodeValue = userInput;
   //newBio.innerText = newUserInput;
   //newBio.innerHTML = newUserInput;
 };
