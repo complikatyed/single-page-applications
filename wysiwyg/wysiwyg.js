@@ -64,12 +64,12 @@ var addPerson = function(myArray, myId) {
     personString = makePersonString(myArray[i], i);
     personElement.innerHTML += personString;
 
-    var elementToAddListenerTo = document.getElementById("person--" + i);
-    console.log(elementToAddListenerTo);
-    elementToAddListenerTo.addEventListener("click", function(){
-      console.log("clicked");
-      //changeBorder();
-      //userInput.focus();
+    var ourCard = document.getElementById("person--" + i);
+
+    ourCard.addEventListener("click", function(){
+      console.log (event);
+      changeBorder();
+      userInput.focus();
     });
   };
 };
@@ -81,14 +81,15 @@ var changeBorder = function() {
   cardId = card.getAttribute('id').split("--")[1];
 }
 
-
-
 addPerson(people, "peopleContainer");
 
+
+// Event listener for when the user adds input (that is going to become the new bio text)
 userInput.addEventListener("keyup", function() {
    changeText(cardId, userInput);
 });
 
+// Event listener for if the user clicks enter
 userInput.addEventListener("keypress", function(e) {
   if (e.keyCode === 13) {
     userInput.blur();
@@ -99,9 +100,10 @@ userInput.addEventListener("keypress", function(e) {
 
 var changeText = function(thingy, elId){
   var newBio = document.getElementById("bio--" + thingy);
-  newBio.childNodes[0].nodeValue = userInput;
-  //newBio.innerText = newUserInput;
-  //newBio.innerHTML = newUserInput;
+  //console.log(userInput);
+  //newBio.childNodes[0].nodeValue = userInput;
+  //newBio.innerText = userInput;
+  newBio.innerHTML = userInput.value;
 };
 
 
