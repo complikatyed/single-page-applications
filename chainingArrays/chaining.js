@@ -20,27 +20,3 @@ var sortedNumbers = integers
 
 // Then output (either in the DOM or the console) the sum of all the resulting numbers.
 console.log("sortedNumbers", sortedNumbers);
-
-
-// var newNums = sortedNumbers.filter(
-//    function(sortedNumber) {return sortedNumber < 19;});
-
-
-// var thirdNums = newNums.map(
-//     function(newNum) {
-//        return newNum * 1.5 -1;
-//   }
-// );
-
-
-// var fourthNums = thirdNums.reduce(
-//   function(prev, curr) {
-//      return prev + curr;
-//   }
-// );
-
-
-// console.log("newNums", newNums);
-// console.log("thirdNums", thirdNums);
-// console.log("fourthNums", fourthNums);
-
