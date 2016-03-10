@@ -1,0 +1,35 @@
+.personCard,
+.bordered {
+  display: inline-block;
+  background-color: yellow;
+  max-width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid orange;
+  text-align: center;
+}
+
+.personCard:nth-child(2n) {
+  background-color: skyblue;
+}
+
+.bordered {
+  border: 3px dotted purple;
+}
+
+.bordered:nth-child(2n) {
+  border: 3px dotted purple;
+  background-color: skyblue;
+}
+
+
+
+img {
+  max-height: 200px;
+  margin: 5px;
+}
+
+.header {
+  font-size: 1.1em;
+  font-weight: 900;
+}
