@@ -21,7 +21,7 @@
   <header>Name and title go here</header>
   <section>Bio and image go here</section>
   <footer>Lifespan info goes here</footer>
-</person>
+</person
 ```
 
 ##### Object structure
@@ -38,3 +38,13 @@
   }
 }
 ```
+
+## Lessons Learned
+
+* Once you create an event listener, it stays around and continues to have an impact.
+> *still need to figure out how to kill an event listener...*
+* Add event listener dynamically in a loop (though this isn't quite working right now).
+* The split method is a really convenient way to isolate an id (esp one that has been added dynamically)  
+  >> example: `cardId = card.getAttribute('id').split("--")[1];`  
+* Using '--' for the dynamically added id makes it easy to do the split on it because it's unlikely that anything else will have the double hyphen structure.  
+* Sometimes you really do need a global variable.
