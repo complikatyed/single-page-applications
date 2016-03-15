@@ -62,14 +62,24 @@ var addPerson = function(myArray, myId) {
   var personElement = document.getElementById(myId);
   for (var i = 0; i < myArray.length; i++) {
     personString = makePersonString(myArray[i], i);
-    
+
+    // This section is Joe's fix to the disappearing event listener
+    // Instead of adding the string directly to the DOM,
+    // (by doing .innerHTML on the personElement, the way I was doing before)
+
+    // 1. create a new div (personDiv, below)
     var personDiv = document.createElement("div");
+    // 2. give the new div a class so we can style it
     personDiv.setAttribute("class", "fancy");
+    // 3. add the person string (from the object data way up at the top)
     personDiv.innerHTML = (personString);
+    // 4. add the new personDiv to the DOM using appendChild
     personElement.appendChild(personDiv);
 
+    // Zoom in on the ids where we want the event listeners to go
     var ourCard = document.getElementById("person--" + i);
 
+    // Now, when we add the event listeners they stay added
     addClickEvent(ourCard);
 
   };
@@ -77,17 +87,20 @@ var addPerson = function(myArray, myId) {
 
 var addClickEvent = function(card) {
   card.addEventListener("click", function() {
+
+    // Calls the function that changes the border style on click
     changeBorder();
+    // Moves focus to the text input box
     userInput.focus();
   });
 }
 
 var changeBorder = function() {
-  var card = event.target.parentNode.parentNode;
-  console.log(event.target.parentNode.parentNode);
+  var card = event.target.closest('person');
   card.setAttribute("class", "bordered");
-  //cardId = card.getAttribute('id').split("--")[1];
+  cardId = card.getAttribute('id').split("--")[1];
 }
+
 
 addPerson(people, "peopleContainer");
 
@@ -100,17 +113,18 @@ userInput.addEventListener("keyup", function() {
 // Event listener for if the user clicks enter
 userInput.addEventListener("keypress", function(e) {
   if (e.keyCode === 13) {
+    // Takes the focus AWAY from the text box
     userInput.blur();
+    // Resets the input box value to blank
     userInput.value = "";
   }
 });
 
 
-var changeText = function(thingy, elId){
-  var newBio = document.getElementById("bio--" + thingy);
-  //console.log(userInput);
-  //newBio.childNodes[0].nodeValue = userInput;
-  //newBio.innerText = userInput;
+var changeText = function(targetId, userInput){
+  // Gets the particular bio section by grabbing the card's id
+  var newBio = document.getElementById("bio--" + targetId);
+  // Says "make the text of the bio whatever the user has typed in"
   newBio.innerHTML = userInput.value;
 };
 

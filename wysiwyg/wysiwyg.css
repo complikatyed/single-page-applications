@@ -1,4 +1,4 @@
-.fancy,
+.personCard,
 .bordered {
   display: inline-block;
   width: 30%;
@@ -6,26 +6,12 @@
   padding: 10px;
   border: 1px solid orange;
   text-align: center;
-}
-
-.fancy:nth-child(2n) {
-  background-color: skyblue;
-}
-
-.fancy:nth-child(2n+1) {
   background-color: yellow;
 }
 
 .bordered {
   border: 3px dotted purple;
-  background-color: yellow;
 }
-
-.bordered:nth-child(2n) {
-  border: 3px dotted purple;
-  background-color: skyblue;
-}
-
 
 img {
   max-height: 200px;
@@ -36,3 +22,22 @@ img {
   font-size: 1.1em;
   font-weight: 900;
 }
+
+
+/*  The nth-child parts are not working after the 'appendChild' refactor
+/*  In order to make them work, I have to drill down further with the event target,
+/*  which causes other problems I can't deal with right now */
+.personCard:nth-child(2n) {
+  background-color: skyblue;
+}
+
+.bordered:nth-child(2n) {
+  border: 3px dotted purple;
+  background-color: skyblue;
+}
+
+
+
+
+
+
