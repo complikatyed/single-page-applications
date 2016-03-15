@@ -62,23 +62,31 @@ var addPerson = function(myArray, myId) {
   var personElement = document.getElementById(myId);
   for (var i = 0; i < myArray.length; i++) {
     personString = makePersonString(myArray[i], i);
-    personElement.innerHTML += personString;
+    
+    var personDiv = document.createElement("div");
+    personDiv.setAttribute("class", "fancy");
+    personDiv.innerHTML = (personString);
+    personElement.appendChild(personDiv);
 
     var ourCard = document.getElementById("person--" + i);
 
-    ourCard.addEventListener("click", function(){
-      console.log (event);
-      changeBorder();
-      userInput.focus();
-    });
+    addClickEvent(ourCard);
+
   };
 };
 
+var addClickEvent = function(card) {
+  card.addEventListener("click", function() {
+    changeBorder();
+    userInput.focus();
+  });
+}
 
 var changeBorder = function() {
-  var card = event.target.closest('person');
+  var card = event.target.parentNode.parentNode;
+  console.log(event.target.parentNode.parentNode);
   card.setAttribute("class", "bordered");
-  cardId = card.getAttribute('id').split("--")[1];
+  //cardId = card.getAttribute('id').split("--")[1];
 }
 
 addPerson(people, "peopleContainer");

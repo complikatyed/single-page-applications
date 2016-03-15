@@ -1,27 +1,30 @@
-.personCard,
+.fancy,
 .bordered {
   display: inline-block;
-  background-color: yellow;
-  max-width: 30%;
+  width: 30%;
   margin: 10px;
   padding: 10px;
   border: 1px solid orange;
   text-align: center;
 }
 
-.personCard:nth-child(2n) {
+.fancy:nth-child(2n) {
   background-color: skyblue;
+}
+
+.fancy:nth-child(2n+1) {
+  background-color: yellow;
 }
 
 .bordered {
   border: 3px dotted purple;
+  background-color: yellow;
 }
 
 .bordered:nth-child(2n) {
   border: 3px dotted purple;
   background-color: skyblue;
 }
-
 
 
 img {
