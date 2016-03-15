@@ -47,4 +47,7 @@
 * The split method is a really convenient way to isolate an id (esp one that has been added dynamically)  
   >> example: `cardId = card.getAttribute('id').split("--")[1];`  
 * Using '--' for the dynamically added id makes it easy to do the split on it because it's unlikely that anything else will have the double hyphen structure.  
-* Sometimes you really do need a global variable.
+* Sometimes you really __do__ need a global variable.  
+* Changing the way you send things to the DOM will also impact the way you are able to style them, sometimes in really funky ways.  
+* Although it's not in the current version, I learned about chaining .parentNode in order to drill down through the event target to get to the thing I needed to change.  
+
