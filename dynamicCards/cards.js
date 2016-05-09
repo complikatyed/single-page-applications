@@ -8,6 +8,7 @@ var cardEl = document.getElementById("cardArea");
 
 createButton.addEventListener("click", function() {
   makeCard();
+  cardInput.value = "";
 });
 
 // Each card needs to include:
@@ -17,11 +18,12 @@ createButton.addEventListener("click", function() {
 
 var makeCard = function(i) {
   cardEl.innerHTML += "<article class='card'>" + cardInput.value + "<br><button id='deleteBtn'>Delete</button></article>";
+
 };
 
 // This removes the article that is closest to the click-target (the delete button in this case)
 
-var eraseCard = function() {
+var removeCard = function() {
   event.target.closest("article").remove();
 }
 
@@ -31,13 +33,9 @@ var eraseCard = function() {
 cardEl.addEventListener("click", function(e){
   // This part says "if what you clicked is actually what I wanted you to click..."
   if (event.target.id === "deleteBtn") {
-    eraseCard();
+    removeCard();
   }
-  // If you clicked something besides what I wanted you to click...
-  else {
-    console.log(event.target);
-    //alert("Why are you clicking that?");
-  }
+
 });
 
 
