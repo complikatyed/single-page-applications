@@ -13,5 +13,5 @@
 2. [Chaining Array Methods](https://github.com/complikatyed/single-page-applications/blob/master/chainingArrays/requirements.md)  
 3. [Guinea Pig Event Handlers](https://github.com/complikatyed/single-page-applications/blob/master/guineaPig/requirements.md)  
 4. [Dynamic Cards](https://github.com/complikatyed/single-page-applications/blob/master/dynamicCards/requirements.md)
-5. [WYSIWYG Event Handlers](https://github.com/complikatyed/single-page-applications/blob/master/wysiwyg/requirements.md)  
+5. [WYSIWYG Event Handlers](https://github.com/complikatyed/single-page-applications/blob/master/wysiwyg/README.md)  
 6. [IIFE Sandwich Maker](https://github.com/complikatyed/single-page-applications/blob/master/sandwich/requirements.md)  
